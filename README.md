@@ -1,6 +1,10 @@
 # Human Theme
 
-Research-grade VS Code theme based on vision science and human perception. Designed with ecological color theory and scientifically validated for accessibility, eye comfort, and colorblind safety.
+Research-grade theme for VS Code and Emacs based on vision science and human perception. Designed with ecological color theory and scientifically validated for accessibility, eye comfort, and colorblind safety.
+
+## Supported Editors
+- **VS Code** - Full theme with semantic highlighting
+- **Emacs 30+** - Modern `deftheme` implementation (see [emacs/README.md](emacs/README.md))
 
 ## Human Dark
 
@@ -40,6 +44,8 @@ Research-grade VS Code theme based on vision science and human perception. Desig
 
 ## Installation
 
+### VS Code
+
 **From Marketplace:**
 1. Press `Ctrl+P` / `Cmd+P`
 2. Type `ext install TomHall.human-theme`
@@ -56,6 +62,26 @@ git clone https://github.com/tom-f-hall/human-theme-vscode.git
 cd human-theme-vscode
 npm install && npm run build
 ```
+
+### Emacs 30+
+
+**Installation:**
+```bash
+# Clone repository
+git clone https://github.com/N3M0-dev/human-theme.git
+
+# Copy theme files
+mkdir -p ~/.emacs.d/themes
+cp human-theme/emacs/*.el ~/.emacs.d/themes/
+```
+
+**Add to your init.el:**
+```elisp
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'human-dark t)
+```
+
+**For complete Emacs installation instructions, see [emacs/README.md](emacs/README.md)**
 
 ## Themes
 
@@ -177,8 +203,10 @@ Edit `src/themeConfig.ts`:
 
 ### Build & Validate
 ```bash
-npm run build     # Generate themes
-npm run validate  # Check compliance
+npm run build          # Generate VS Code themes
+npm run build:emacs    # Generate Emacs themes
+npm run build:all      # Generate all themes
+npm run validate       # Check compliance
 ```
 
 ## Architecture
