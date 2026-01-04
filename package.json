@@ -91,6 +91,8 @@
   },
   "scripts": {
     "build": "ts-node src/build.ts",
+    "build:emacs": "ts-node src/buildEmacs.ts",
+    "build:all": "npm run build && npm run build:emacs",
     "validate": "ts-node src/build.ts --validate",
     "prepare": "npm run build"
   },
